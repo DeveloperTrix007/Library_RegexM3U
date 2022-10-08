@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RegexM3U {
+public  class RegexM3U {
     /**
      * Pega informaçôes da lista em jsonAray
      * @param str_texto
@@ -17,7 +17,7 @@ public class RegexM3U {
      */
     public JSONArray Getinfo(String str_texto) {
 
-        return Compilar_TEXTO(str_texto);
+      return Compilar_TEXTO(str_texto);
 
 
     }
@@ -31,10 +31,19 @@ public class RegexM3U {
      */
     public JSONArray Getinfo(File FileTXT) throws IOException {
 
-        String texto = FileUtils.readFileToString(FileTXT, "UTF-8");
+        if (FileTXT.isFile()){
+            String texto = FileUtils.readFileToString(FileTXT, "UTF-8");
 
 
-        return Compilar_TEXTO(texto);
+
+
+            return   Compilar_TEXTO(texto);
+        }else{
+            System.out.println("Error arquivo nao existe");
+            return null;
+        }
+
+
 
     }
 
@@ -47,13 +56,23 @@ public class RegexM3U {
 
 
         JSONArray jsonArray = new JSONArray();
+        JSONObject object = new JSONObject();
+
+
+
 
 
         Matcher list_found = Pattern.compile("#EXTINF:.*\\n*.*").matcher(texto);
 
 
+
+
         while (list_found.find()) {
-            JSONObject object = new JSONObject();
+
+
+
+
+
 
             Matcher tvg_logo_count = Pattern.compile("tvg-logo=['|\"].*?['!\"]").matcher(list_found.group());
 
@@ -63,8 +82,13 @@ public class RegexM3U {
                         .replaceAll("tvg-logo=['\"]", "")
                         .replaceAll("['\"]", "");
 
+                object.put("img",logo);
 
-                jsonArray.put(object.put("img", logo));
+
+
+
+
+
 
 
             }
@@ -73,7 +97,6 @@ public class RegexM3U {
             Matcher tvg_name_count_option1 = Pattern.compile("tvg-name=['|\"].*?['!\"]").matcher(list_found.group());
             Matcher tvg_name_count_option2 = Pattern.compile(",.*").matcher(list_found.group());
 
-
             if (tvg_name_count_option1.find()) {
                 String name = tvg_name_count_option1.group()
 
@@ -81,13 +104,21 @@ public class RegexM3U {
                         .replaceAll("['\"]", "");
 
 
-                jsonArray.put(object.put("nome", name));
+                object.put("nome",name);
+
+
+
 
 
             } else if (tvg_name_count_option2.find()) {
 
                 String name = tvg_name_count_option2.group().replaceAll(",", "").trim();
-                jsonArray.put(object.put("nome", name));
+
+                object.put("nome",name);
+
+
+
+
 
 
             }
@@ -98,16 +129,20 @@ public class RegexM3U {
             if (t.find()) {
                 String link_canal = t.group().trim();
 
+                object.put("link",link_canal);
 
-                jsonArray.put(object.put("canal", link_canal));
+
+
 
             }
 
+            jsonArray.put(object);
 
         }
 
-        return jsonArray;
 
+
+return jsonArray;
 
     }
 

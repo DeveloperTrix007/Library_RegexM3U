@@ -17,20 +17,17 @@ public class Main {
                 "http://cdn.tvwebplay.top/live/teste123/teste123/101.ts";
 
 
-       // RegexM3U regexM3U = new RegexM3U();
+      //  RegexM3U regexM3U = new RegexM3U();
 
 
 
      //   File file =  new File("canais.tx");
 
-    //  JSONArray jsonArray =  regexM3U.Getinfo(new File("canais.txt"));
 
-   //   System.out.println(jsonArray);
-
+         //   JSONArray jsonArray = regexM3U.Getinfo(new File("canais.txt"));
 
 
-
-        //System.out.println(regexM3U.Getinfo(texto));
+       // System.out.println(regexM3U.Getinfo(file));
 
 
 
