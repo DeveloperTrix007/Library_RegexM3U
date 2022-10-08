@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group 'com.library.regexm3u'
@@ -15,5 +16,27 @@ dependencies {
     implementation group: 'commons-io', name: 'commons-io', version: '2.4'
 
 
+}
+
+
+
+
+
+
+
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.java
+
+                groupId = 'com.github.developertrix007'
+                artifactId = 'Library_RegexM3U'
+                version = version
+            }
+        }
+    }
 }
 
