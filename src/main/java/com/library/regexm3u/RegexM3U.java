@@ -56,7 +56,7 @@ public  class RegexM3U {
 
 
         JSONArray jsonArray = new JSONArray();
-        JSONObject object = new JSONObject();
+
 
 
 
@@ -69,7 +69,7 @@ public  class RegexM3U {
 
         while (list_found.find()) {
 
-
+            JSONObject object = new JSONObject();
 
 
 
