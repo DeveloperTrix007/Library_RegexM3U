@@ -82,7 +82,7 @@ public  class RegexM3U {
                         .replaceAll("tvg-logo=['\"]", "")
                         .replaceAll("['\"]", "");
 
-                object.put("img",logo);
+                object.put("logo",logo);
 
 
 

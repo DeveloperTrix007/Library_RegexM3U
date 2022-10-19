@@ -1,8 +1,5 @@
 package com.library.regexm3u;
 
-import org.json.JSONArray;
-
-import java.io.File;
 import java.io.IOException;
 
 public class Main {
