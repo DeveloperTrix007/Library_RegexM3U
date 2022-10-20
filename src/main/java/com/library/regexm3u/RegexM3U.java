@@ -91,8 +91,6 @@ public  class RegexM3U {
 
 
 
-            }else{
-                object.put("logo","");
             }
 
 
@@ -123,10 +121,6 @@ public  class RegexM3U {
 
 
 
-            }else{
-
-                    object.put("nome","");
-
             }
 
 
@@ -138,12 +132,6 @@ public  class RegexM3U {
                 object.put("link",link_canal);
 
 
-
-
-            }else{
-
-
-                    object.put("link","");
 
 
             }
