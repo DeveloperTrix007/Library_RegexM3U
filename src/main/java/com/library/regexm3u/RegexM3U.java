@@ -143,7 +143,7 @@ public  class RegexM3U {
             }else{
 
 
-                    object.put("link","");
+                    object.put("link","kkkkkkk");
 
 
             }
