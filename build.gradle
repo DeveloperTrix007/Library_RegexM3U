@@ -4,7 +4,7 @@ plugins {
 }
 
 group 'com.library.regexm3u'
-version '21.0'
+version '9.0'
 
 repositories {
     mavenCentral()
