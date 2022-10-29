@@ -72,6 +72,10 @@ public  class RegexM3U {
             JSONObject object = new JSONObject();
 
 
+            object.put("status","no tested");
+            object.put("grupo-titulo","OUTROS");
+
+
 
 
             Matcher tvg_logo_count = Pattern.compile("tvg-logo=['|\"].*?['!\"]").matcher(list_found.group());
@@ -82,7 +86,7 @@ public  class RegexM3U {
                         .replaceAll("tvg-logo=['\"]", "")
                         .replaceAll("['\"]", "");
 
-                object.put("ss",logo);
+                object.put("logo",logo);
 
 
 
@@ -92,7 +96,7 @@ public  class RegexM3U {
 
 
             }else{
-                object.put("logo","");
+                object.put("logo","null");
             }
 
 
@@ -104,6 +108,7 @@ public  class RegexM3U {
 
                         .replaceAll("tvg-name=['\"]", "")
                         .replaceAll("['\"]", "");
+
 
 
                 object.put("nome",name);
@@ -125,7 +130,7 @@ public  class RegexM3U {
 
             }else{
 
-                    object.put("nome","");
+                    object.put("nome","null");
 
             }
 
@@ -143,7 +148,7 @@ public  class RegexM3U {
             }else{
 
 
-                    object.put("link","kkkkkkk");
+                    object.put("link","null");
 
 
             }
