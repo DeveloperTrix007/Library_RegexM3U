@@ -62,7 +62,8 @@ public  class RegexM3U {
 
 
 
-        Matcher list_found = Pattern.compile("#EXTINF:.*\\n*.*").matcher(texto);
+        Matcher list_found = Pattern.compile("#EXTINF:.*?(http|https).*?(http|https).*?\\s|#EXTINF:.*\\n*.*").matcher(texto);
+
 
 
 
@@ -136,7 +137,7 @@ public  class RegexM3U {
             }
 
 
-            Matcher t = Pattern.compile("\\n(http|https).*").matcher(list_found.group());
+            Matcher t = Pattern.compile("\\n(http|https).*|[\\s](http|https).*.$").matcher(list_found.group());
 
             if (t.find()) {
                 String link_canal = t.group().trim();
