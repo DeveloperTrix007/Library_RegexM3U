@@ -112,8 +112,15 @@ public  class RegexM3U {
                         .replaceAll("['\"]", "");
 
 
+                if(name.isEmpty()){
+                    object.put("nome","null");
 
-                object.put("nome",name);
+                }else{
+                    object.put("nome",name);
+
+                }
+
+
 
 
 
