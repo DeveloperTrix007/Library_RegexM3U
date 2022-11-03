@@ -116,7 +116,7 @@ public  class RegexM3U {
                     object.put("nome","null");
 
                 }else{
-                    object.put("nome",name);
+                    object.put("nome",name.substring(0,40));
 
                 }
 
@@ -130,7 +130,7 @@ public  class RegexM3U {
 
                 String name = tvg_name_count_option2.group().replaceAll(",", "").trim();
 
-                object.put("nome",name);
+                object.put("nome",name.substring(0,40));
 
 
 
