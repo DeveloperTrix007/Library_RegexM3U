@@ -109,14 +109,14 @@ public  class RegexM3U {
                 String name = tvg_name_count_option1.group()
 
                         .replaceAll("tvg-name=['\"]", "")
-                        .replaceAll("['\"]", "");
+                        .replaceAll("['\"]", "").substring(0,40);
 
 
                 if(name.isEmpty()){
                     object.put("nome","null");
 
                 }else{
-                    object.put("nome",name.substring(0,40));
+                    object.put("nome",name);
 
                 }
 
@@ -128,9 +128,9 @@ public  class RegexM3U {
 
             } else if (tvg_name_count_option2.find()) {
 
-                String name = tvg_name_count_option2.group().replaceAll(",", "").trim();
+                String name = tvg_name_count_option2.group().replaceAll(",", "").trim().substring(0,40);
 
-                object.put("nome",name.substring(0,40));
+                object.put("nome",name);
 
 
 

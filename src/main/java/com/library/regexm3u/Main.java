@@ -9,15 +9,11 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
 
-     /**   String texto = "#EXTINF: -1 tvg-logo='https://upload.wikimedia.org/wikipedia/commons/f/fe/CARTOON_NETWORK_logo.png' tvg-name='globo' tvg-link='http://cdn.tvwebplay.top/live/teste123/teste123/101.ts' group-title='Desenhos', Cartoon\n" +
-                "http://cdn.tvwebplay.top/live/teste123/teste123/101.ts\n" +
-                "#EXTINF:-1 tvg-id=\"\" tvg-logo=\"https://minhalista-files.nyc3.digitaloceanspaces.com/iptv-list.jpg\" group-title=\"Futebol Ao Vivo\",Jogos Ao Vivo 5\n" +
-                "http://aovivo.futeboltv.com:8081/live/15/chunks.m3u8?LISTASGLAU\n" +
-                "#EXTINF: -1 tvg-logo='https://upload.wikimedia.org/wikipedia/commons/f/fe/CARTOON_NETWORK_logo.pnh' tvg-name='Sbt' tvg-link='http://cdn.tvwebplay.top/live/teste123/teste123/101.ts' group-title='Desenhos', Cartoon\\n\" +\n" +
-                "http://cdn.tvwebplay.top/live/teste123/teste123/101.ts";
-**/
+        String texto = "#EXTINF:-1 group-title=\"RADIOS\" tvg-logo=\"http://i.imgur.com/MmJBR9j.png\" tvg-name=\"gfgfghhghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhggfhfhfghgfhghghghgfhfhgta\"radio=true,RADIO Rap Nacional\n" +
+                "http://192.99.150.31:8377/;";
 
-      //  RegexM3U regexM3U = new RegexM3U();
+
+        RegexM3U regexM3U = new RegexM3U();
 
 
 
@@ -30,7 +26,7 @@ public class Main {
 
 
 
-  //      System.out.println(regexM3U.Getinfo(texto));
+        System.out.println(regexM3U.Getinfo(texto));
 
 
 
