@@ -62,7 +62,7 @@ public  class RegexM3U {
 
 
 
-        Matcher list_found = Pattern.compile("#EXTINF:.*?(http|https).*?(http|https).*?\\s|#EXTINF:.*\\n*.*").matcher(texto);
+        Matcher list_found = Pattern.compile("#EXTINF:.*?(http|https).*?(http|https).*?\\s|#EXTINF:.*\\s*.*").matcher(texto);
 
 
 
